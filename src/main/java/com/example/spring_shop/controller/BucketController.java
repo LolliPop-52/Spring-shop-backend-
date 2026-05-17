@@ -26,7 +26,6 @@ public class BucketController {
     public ResponseEntity<BucketDTO> addBucketItem(@AuthenticationPrincipal CustomUserDetails userDetails,
                                                    @RequestBody ModifyBucketItemDTO newBucketItemDTO){
         newBucketItemDTO.setUserEmail(userDetails.getUsername());
-        System.out.println(newBucketItemDTO);
         return ResponseEntity.ok(bucketService.addItemToBucket(newBucketItemDTO));
     }
 
